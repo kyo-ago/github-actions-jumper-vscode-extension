@@ -2,17 +2,22 @@
   "name": "github-actions-jumper",
   "displayName": "GitHub Actions Jumper",
   "description": "Jump to GitHub Actions referenced files with Ctrl+Click",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": ["Other"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyo-ago/github-actions-jumper-vscode-extension.git"
+  },
   "main": "./out/extension.js",
   "activationEvents": [
     "onLanguage:yaml"
   ],
   "contributes": {},
   "scripts": {
+    "package": "vsce package",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
