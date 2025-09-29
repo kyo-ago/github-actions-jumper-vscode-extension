@@ -1,55 +1,50 @@
 # GitHub Actions Jumper
 
 ![VSCode Extension](https://img.shields.io/badge/VSCode-Extension-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-GitHub ActionsのワークフローファイルでCtrl+クリック（Cmd+クリック）により、`uses`で参照されているアクションファイルにジャンプできるVSCode拡張機能です。
+A VSCode extension that enables Ctrl+Click (Cmd+Click on Mac) navigation to action files referenced by `uses` in GitHub Actions workflow files.
 
-## 機能
+## Features
 
-- GitHub Actionsワークフローファイル（`.github/workflows/*.yml`、`.github/workflows/*.yaml`）内の`uses`フィールドでCtrl+クリック（MacではCmd+クリック）すると、参照先のファイルにジャンプできます
-- ローカルのアクションファイル（`./`で始まるパス）への直接ジャンプをサポート
-- 外部GitHubリポジトリのアクションへのリンクもサポート（ブラウザで開きます）
+- Navigate to referenced action files by Ctrl+Click (Cmd+Click on Mac) on `uses` fields in GitHub Actions workflow files (`.github/workflows/*.yml`, `.github/workflows/*.yaml`)
+- Support for direct jumps to local action files (paths starting with `./`)
+- Support for links to external GitHub repository actions (opens in browser)
 
-## 使い方
+## Usage
 
-1. 拡張機能をインストールします
-2. GitHub Actionsのワークフローファイル（`.github/workflows/`内の`.yml`または`.yaml`ファイル）を開きます
-3. `uses:`で指定されているアクションのパス上でCtrl+クリック（MacではCmd+クリック）します
-4. 参照先のファイルまたはGitHubページが開きます
+1. Install the extension
+2. Open a GitHub Actions workflow file (`.yml` or `.yaml` files in `.github/workflows/`)
+3. Ctrl+Click (Cmd+Click on Mac) on the action path specified in `uses:`
+4. The referenced file or GitHub page will open
 
-## サポートされる`uses`形式
+## Supported `uses` Formats
 
-### ローカルアクション
+### Local Actions
 ```yaml
 uses: ./path/to/action
 uses: ./path/to/action@v1
 ```
-ローカルアクションの場合、以下の順序でファイルを検索します：
-1. 指定されたパス自体
+For local actions, files are searched in the following order:
+1. The specified path itself
 2. `path/action.yml`
 3. `path/action.yaml`
 
-### 外部GitHubアクション
+### External GitHub Actions
 ```yaml
 uses: owner/repo@v1
 uses: owner/repo/path/to/action@main
 ```
-外部アクションの場合、GitHubのリポジトリページをブラウザで開きます。
+For external actions, the GitHub repository page will open in your browser.
 
-## 開発
+## Development
 
-### セットアップ
+### Setup
 ```bash
 npm install
 npm run compile
 ```
 
-### デバッグ
-1. VSCodeでプロジェクトを開く
-2. F5キーを押して拡張機能のデバッグを開始
-3. 新しいVSCodeウィンドウが開き、拡張機能がロードされます
-
-## ライセンス
-
-MIT
+### Debug
+1. Open the project in VSCode
+2. Press F5 to start debugging the extension
+3. A new VSCode window will open with the extension loaded
