@@ -2,11 +2,14 @@
   "name": "github-actions-jumper",
   "displayName": "GitHub Actions Jumper",
   "description": "Jump to GitHub Actions referenced files with Ctrl+Click",
-  "version": "0.0.4",
+  "version": "0.0.6",
+  "publisher": "kyo-ago",
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": ["Other"],
+  "keywords": ["github", "actions", "yaml", "workflow", "navigation"],
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/kyo-ago/github-actions-jumper-vscode-extension.git"
